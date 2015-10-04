@@ -1,0 +1,40 @@
+{
+  "name": "arekzc-resource",
+  "version": "0.1.0",
+  "description": "Easy to use model based REST API javascript client for browser",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "tsc gulpfile.ts karma.conf.ts --module \"commonjs\" --moduleResolution \"node\"",
+    "test": "gulp ci"
+  },
+  "author": "ArekZc <arekzc@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "rest",
+    "api",
+    "resource",
+    "angular",
+    "model",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArekZc/ResourceManager.git"
+  },
+  "devDependencies": {
+    "definitively-typed": "0.0.1",
+    "gulp": "^3.9.0",
+    "gulp-tslint": "^3.3.0",
+    "gulp-typescript": "^2.9.0",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.10",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6",
+    "typescript": "^1.6.2",
+    "yargs": "^3.26.0"
+  },
+  "dependencies": {
+    "angular": "^1.4.7",
+    "reflect-metadata": "^0.1.2"
+  }
+}

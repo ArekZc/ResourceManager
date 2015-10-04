@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"target": "ES5",
+		"module": "commonjs",
+		"experimentalDecorators": true,
+		"moduleResolution": "node",
+		"noImplicitAny": true
+	},
+	"files": [
+
+	]
+}
