@@ -1,3 +1,4 @@
+/// <reference path="typings/tsd.d.ts" />
 var gulp = require('gulp');
 var tslint = require('gulp-tslint');
 gulp.task('coding-standards', function () {
