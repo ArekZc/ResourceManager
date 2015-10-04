@@ -1,5 +1,6 @@
 # ResourceManager 
 [![Build Status](https://travis-ci.org/ArekZc/ResourceManager.svg)](https://travis-ci.org/ArekZc/ResourceManager)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 > easy to use model based REST API client
 
 ## Installation
