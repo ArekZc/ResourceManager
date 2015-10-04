@@ -1,4 +1,5 @@
 # ResourceManager 
+[![Build Status](https://travis-ci.org/ArekZc/ResourceManager.svg)](https://travis-ci.org/ArekZc/ResourceManager)
 > easy to use model based REST API client
 
 ## Installation
