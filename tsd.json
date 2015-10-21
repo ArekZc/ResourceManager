@@ -6,55 +6,79 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "orchestrator/orchestrator.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+      "commit": "d6c98baa7fd703e449cf37f3ec39ed3bd92cfd35"
     },
     "gulp/gulp.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
-    },
-    "q/Q.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+      "commit": "d6c98baa7fd703e449cf37f3ec39ed3bd92cfd35"
     },
     "node/node.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "q/Q.d.ts": {
+      "commit": "d6c98baa7fd703e449cf37f3ec39ed3bd92cfd35"
     },
     "gulp-typescript/gulp-typescript.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+      "commit": "d6c98baa7fd703e449cf37f3ec39ed3bd92cfd35"
     },
-    "yargs/yargs.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
-    },
-    "vinyl/vinyl.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
-    },
-    "gulp-tslint/gulp-tslint.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
-    },
-    "serve-static/serve-static.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
-    },
-    "bluebird/bluebird.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
-    },
-    "log4js/log4js.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
-    },
-    "karma/karma.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
-    },
-    "express/express.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
-    },
-    "mime/mime.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+    "merge2/merge2.d.ts": {
+      "commit": "d6c98baa7fd703e449cf37f3ec39ed3bd92cfd35"
     },
     "angularjs/angular.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+      "commit": "d6c98baa7fd703e449cf37f3ec39ed3bd92cfd35"
     },
     "jquery/jquery.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+      "commit": "d6c98baa7fd703e449cf37f3ec39ed3bd92cfd35"
+    },
+    "browserify/browserify.d.ts": {
+      "commit": "d6c98baa7fd703e449cf37f3ec39ed3bd92cfd35"
+    },
+    "vinyl-source-stream/vinyl-source-stream.d.ts": {
+      "commit": "d6c98baa7fd703e449cf37f3ec39ed3bd92cfd35"
     },
     "jasmine/jasmine.d.ts": {
-      "commit": "98d3168c2c570352a3a7393788e2ec9fbb08ade6"
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "log4js/log4js.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "bluebird/bluebird.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "express/express.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "mime/mime.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "serve-static/serve-static.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "karma/karma.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "gulp-uglify/gulp-uglify.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "gulp-rename/gulp-rename.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "yargs/yargs.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "through2/through2.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "vinyl/vinyl.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "gulp-util/gulp-util.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "chalk/chalk.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "gulp-sourcemaps/gulp-sourcemaps.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
     }
   }
 }

@@ -1,21 +1,22 @@
-/// <reference path="../../../node_modules/definitively-typed/jasmine/jasmine.d.ts" />
-/// <reference path="../../../src/Filter/Blacklist.ts" />
+/// <reference path="../../../typings/jasmine/jasmine.d.ts" />
 
-describe('Unit: Whitelist class', () => {
+describe('Unit: Blacklist class', () => {
 	
-	let whitelist: arekzc.resource.filter.Blacklist;
+	let global: any = window,
+		Blacklist = global.azResource.Blacklist,
+		blacklist: any;
 	
 	it('should be defined', () => {
 		
-		expect(arekzc.resource.filter.Blacklist).toBeDefined();
+		expect(Blacklist).toBeDefined();
 		
 	});
 	
 	it('should be instanted', () => {
 		
-		whitelist = new arekzc.resource.filter.Blacklist(['id']);
+		blacklist = new Blacklist(['id']);
 		
-		expect(whitelist instanceof arekzc.resource.filter.Blacklist).toBeTruthy();
+		expect(blacklist instanceof Blacklist).toBeTruthy();
 		
 	});
 	
@@ -23,13 +24,13 @@ describe('Unit: Whitelist class', () => {
 		
 		it('should be defined', () => {
 			
-			expect(whitelist.filter).toBeDefined();
+			expect(blacklist.filter).toBeDefined();
 			
 		});
 		
 		it('should return object without fields passed in constructor', () => {
 			
-			expect(whitelist.filter({id: 1, title: 'title'})).toBe({title: 'title'});
+			expect(blacklist.filter({id: 1, title: 'title'})).toBe({title: 'title'});
 			
 			
 		});

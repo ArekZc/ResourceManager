@@ -1,8 +1,4 @@
 
-declare module arekzc.resource.converter {
-	
-	interface IConverter {
-		convert(object: Object): Object;
-	}
-	
+export interface IConverter {
+	convert(object: Object): Object;
 }

@@ -1,49 +1,42 @@
-/// <reference path="../../../node_modules/definitively-typed/jasmine/jasmine.d.ts" />
-/// <reference path="../../../src/Resource/ApiResource.ts" />
+/// <reference path="../../../typings/jasmine/jasmine.d.ts" />
+/// <reference path="../../../typings/angularjs/angular.d.ts" />
 
-describe('Unit: ApiResource class', () => {
+describe('Unit: Api class', () => {
 	
-	let apiResource: arekzc.resource.resource.ApiResource, http, urlGenerator, handler, transform, filter;
-	
-	beforeEach(() => {
-		
-		http = jasmine.createSpy('http');
-		urlGenerator = {
-			generate: jasmine.createSpy('generate').and.returnValue('/books/1')
-		};
-		
-		handler = {
-			handle: jasmine.createSpy('handle')
-		};
-		
-		transform = {
-			transform: jasmine.createSpy('transform').and.returnValue({})
-		};
-		
-		filter = {
-			filter: jasmine.createSpy('fiter').and.returnValue({})
-		}
-		
-		apiResource = new arekzc.resource.resource.ApiResource(
-			undefined,
-			http,
-			urlGenerator,
-			handler,
-			transform,
-			filter	
-		);
-		
-	});
+	let global: any = window,
+		Api = global.azResource.Api,
+		api: any,
+		http: any,
+		handler: any,
+		resourceManager: any,
+		urlGenerator: any,
+		transform: any,
+		filter: any;
 	
 	it('should be defined', () => {
 		
-		expect(arekzc.resource.resource.ApiResource).toBeDefined();
+		expect(Api).toBeDefined();
 		
 	});
 	
-	it('should be instanted', () => {
+	it('should be instantied', () => {
 		
-		expect(apiResource instanceof arekzc.resource.resource.ApiResource).toBeTruthy();
+		let registry = new global.azResource.ApiRegistry(),
+			configuration = new global.azResource.Configuration(registry);
+			
+		let converter = new global.azResource.ResponseConverter(),
+			errorConverter = new global.azResource.ResponseErrorConverter();
+		
+		http = angular.injector(['ng']).get('$http');
+		resourceManager = new global.azResource.ResourceManager(http, configuration);
+		filter = new global.azResource.Whitelist(['id']);
+		transform = new global.azResource.RequestTransform();
+		urlGenerator = new global.azResource.UrlGenerator('/api/books/{id}');
+		handler = new global.azResource.ResponseHandler(converter, errorConverter);
+		
+		api = new Api(resourceManager, http, urlGenerator, handler, filter, transform);
+		
+		expect(api instanceof Api).toBeTruthy();
 		
 	});
 	
@@ -51,13 +44,13 @@ describe('Unit: ApiResource class', () => {
 		
 		it('should be defined', () => {
 			
-			expect(apiResource.save).toBeDefined();
+			expect(api.save).toBeDefined();
 			
 		});
 		
 		it('should call http service general method with good configuration', () => {
 			
-			apiResource.save({});
+			api.save({});
 			
 			expect(http).toHaveBeenCalledWith({				 
 				method: 'POST',
@@ -74,13 +67,13 @@ describe('Unit: ApiResource class', () => {
 		
 		it('should be defined', () => {
 			
-			expect(apiResource.update).toBeDefined();
+			expect(api.update).toBeDefined();
 			
 		});
 		
 		it('should call http service general method with good configuration', () => {
 			
-			apiResource.update({});
+			api.update({});
 			
 			expect(http).toHaveBeenCalledWith({				 
 				method: 'PUT',
@@ -97,13 +90,13 @@ describe('Unit: ApiResource class', () => {
 		
 		it('should be defined', () => {
 			
-			expect(apiResource.query).toBeDefined();
+			expect(api.query).toBeDefined();
 			
 		});
 		
 		it('should call http service general method with good configuration', () => {
 			
-			apiResource.query({}, {});
+			api.query({}, {});
 			
 			expect(http).toHaveBeenCalledWith({				 
 				method: 'GET',
@@ -120,13 +113,13 @@ describe('Unit: ApiResource class', () => {
 		
 		it('should be defined', () => {
 			
-			expect(apiResource.remove).toBeDefined();
+			expect(api.remove).toBeDefined();
 			
 		});
 		
 		it('should call http service general method with good configuration', () => {
 			
-			apiResource.remove({});
+			api.remove({});
 			
 			expect(http).toHaveBeenCalledWith({				 
 				method: 'DELETE',
@@ -141,13 +134,13 @@ describe('Unit: ApiResource class', () => {
 		
 		it('should be defined', () => {
 			
-			expect(apiResource.get).toBeDefined();
+			expect(api.get).toBeDefined();
 			
 		});
 		
 		it('should call http service general method with good configuration', () => {
 			
-			apiResource.get(1);
+			api.get(1);
 			
 			expect(http).toHaveBeenCalledWith({				 
 				method: 'GET',

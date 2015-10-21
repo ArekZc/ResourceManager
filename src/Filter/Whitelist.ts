@@ -1,29 +1,26 @@
-/// <reference path="IFilter.ts" />
+import {IFilter} from './IFilter';
 
-module arekzc.resource.filter {
+export class Whitelist implements IFilter {
 	
-	export class Whitelist implements IFilter {
+	private fields: Array<string>;
+	
+	constructor(fields: Array<string>) {
 		
-		private fields: Array<string>;
+		this.fields = fields;
 		
-		constructor(fields: Array<string>) {
-			
-			this.fields = fields;
-			
+	}
+	
+	public filter(object: any): Object {
+		
+		let result = {};
+		
+		for (let i = 0; i < this.fields.length; i++) {
+				
+			result[this.fields[i]] = object[this.fields[i]];
+				
 		}
 		
-		public filter(object: any): Object {
-			
-			let result = {};
-			
-			for (let i = 0; i < this.fields.length; i++) {
-					
-				result[this.fields[i]] = object[this.fields[i]];
-					
-			}
-			
-			return result;
-		}
+		return result;
 		
 	}
 	
