@@ -1,6 +1,6 @@
 {
   "name": "arekzc-resource",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Template engine for frontend developers to prototype views",
   "main": "index.js",
   "scripts": {
