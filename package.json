@@ -1,12 +1,11 @@
 {
   "name": "arekzc-resource",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Template engine for frontend developers to prototype views",
   "main": "index.js",
   "scripts": {
     "start": "gulp start",
-    "test": "gulp test",
-    "install": "tsd install && tsc -p ./ && gulp build"
+    "test": "gulp test"
   },
   "author": "ArekZc <arekzc@gmail.com> (https://github.com/ArekZc)",
   "license": "MIT",
