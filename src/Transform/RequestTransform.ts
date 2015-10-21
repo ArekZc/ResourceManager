@@ -1,14 +1,10 @@
-/// <reference path="ITransform.ts" />
+import {ITransform} from "./ITransform";
 
-module arekzc.resource.transform {
+export class RequestTransform implements ITransform {
 	
-	export class RequestTransform implements ITransform {
+	transform(object: any): Object {
 		
-		transform(object: any): Object {
-			
-			return object;
-			
-		}
+		return object;
 		
 	}
 	

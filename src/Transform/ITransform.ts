@@ -1,8 +1,4 @@
 
-declare module arekzc.resource.transform {
-	
-	interface ITransform {
-		transform(object: any): Object;
-	}
-	
+export interface ITransform {
+	transform(object: Object): Object;
 }

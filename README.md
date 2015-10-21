@@ -32,7 +32,7 @@ let configuration = new arekzc.resource.configuration.Configuration(registry);
 // Create instance of resource with provided services
 let resourceManager = new arekzc.resource.ResourceManager(http, configuration);
 // Get new resource based on metadata added by Reflect library
-resourceManager.getResource(Book).get(1);
+resourceManager.create(Book).get(1);
 ```
 
 ### Javascript
@@ -57,7 +57,7 @@ var configuration = new arekzc.resource.configuration.Configuration(registry);
 // Create instance of resource with provided services
 var resourceManager = new arekzc.resource.ResourceManager(http, configuration);
 
-resourceManager.getResource(Book).get(1);
+resourceManager.create(Book).get(1);
 ```
 
 ## API
@@ -84,7 +84,7 @@ resourceManager.getResource(Book).get(1);
 ### Default resource
 
 ```javascript
-let resource = resourceManager.getResource(Book);
+let resource = resourceManager.create(Book);
 
 let book = new Book();
 

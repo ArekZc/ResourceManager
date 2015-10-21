@@ -1,13 +1,14 @@
 {
   "name": "arekzc-resource",
-  "version": "0.1.0",
-  "description": "Easy to use model based REST API javascript client for browser",
-  "main": "gulpfile.js",
+  "version": "0.2.0",
+  "description": "Template engine for frontend developers to prototype views",
+  "main": "index.js",
   "scripts": {
-    "start": "tsc gulpfile.ts karma.conf.ts --module \"commonjs\" --moduleResolution \"node\"",
-    "test": "gulp ci"
+    "start": "gulp start",
+    "test": "gulp test",
+    "install": "tsd install && tsc -p ./ && gulp build"
   },
-  "author": "ArekZc <arekzc@gmail.com>",
+  "author": "ArekZc <arekzc@gmail.com> (https://github.com/ArekZc)",
   "license": "MIT",
   "keywords": [
     "rest",
@@ -22,17 +23,25 @@
     "url": "https://github.com/ArekZc/ResourceManager.git"
   },
   "devDependencies": {
-    "definitively-typed": "0.0.1",
+    "browserify": "^11.2.0",
     "gulp": "^3.9.0",
-    "gulp-tslint": "^3.3.0",
-    "gulp-typescript": "^2.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.9.2",
+    "gulp-uglify": "^1.4.1",
+    "gulp-util": "^3.0.6",
     "jasmine-core": "^2.3.4",
     "karma": "^0.13.10",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.1",
+    "merge2": "^0.3.6",
     "phantomjs": "^1.9.18",
+    "tsd": "^0.6.5",
+    "tsify": "^0.12.2",
     "typescript": "^1.6.2",
-    "yargs": "^3.26.0"
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "yargs": "^3.27.0"
   },
   "dependencies": {
     "angular": "^1.4.7",

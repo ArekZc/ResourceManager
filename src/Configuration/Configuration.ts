@@ -1,17 +1,13 @@
-/// <reference path="../Registry/ResourceRegistry.ts" />
+import {IApiRegistry} from "../Registry/IApiRegistry";
 
-module arekzc.resource.configuration {
+export class Configuration {
 	
-	export class Configuration {
+	public apiRegistry: IApiRegistry; 
+	
+	constructor(apiRegisty: IApiRegistry) {
 		
-		public resourceRegistry: arekzc.resource.registry.IResourceRegistry; 
-		
-		constructor(resourceRegisty: arekzc.resource.registry.IResourceRegistry) {
-			
-			this.resourceRegistry = resourceRegisty;
-			
-		}
-		
+		this.apiRegistry = apiRegisty;
+	
 	}
 	
 }

@@ -1,37 +1,36 @@
-/// <reference path="../../../node_modules/definitively-typed/jasmine/jasmine.d.ts" />
-/// <reference path="../../../src/Handler/ResponseHandler.ts" />
+/// <reference path="../../../typings/jasmine/jasmine.d.ts" />
 
 describe('Unit: ResponseHandler class', () => {
 	
-	let handler: arekzc.resource.handler.IHandler, converter, errorConverter;
-	
-	beforeEach(() => {
+	let global: any = window,
+		ResponseHandler = global.azResource.ResponseHandler,
+		ResponseConverter = global.azResource.ResponseConverter,
+		ResponseErrorConverter = global.azResource.ResponseErrorConverter,
+		handler: any,
+		converter: any,
+		errorConverter: any;
 		
-		converter = {
-			convert: jasmine.createSpy('convert')	
-		};
-		
-		errorConverter = {
-			convert: jasmine.createSpy('errorConvert')	
-		};
-		
-		handler = new arekzc.resource.handler.ResponseHandler(converter, errorConverter);
-		
-	});
+	function Book() {
+		this.id = undefined;
+		this.title = undefined;
+	}
 	
 	it('should be defined', () => {
 		
-		expect(arekzc.resource.handler.ResponseHandler).toBeDefined();
+		expect(ResponseHandler).toBeDefined();
 		
 	});
-	
+
 	it('should be instanted', () => {
 		
-		expect(handler instanceof arekzc.resource.handler.ResponseHandler).toBeTruthy();
+		converter = new ResponseConverter(Book);
+		errorConverter = new ResponseErrorConverter();
+		
+		handler = new ResponseHandler(converter, errorConverter);
 		
 	});
 	
-	it('should have method "handle" which', () => {
+	describe('should have method "handle" which', () => {
 		
 		it('should be defined', () => {
 			
@@ -41,6 +40,8 @@ describe('Unit: ResponseHandler class', () => {
 		
 		it('should run response converter when response status is not error', () => {
 			
+			spyOn(converter, 'convert');
+			
 			handler.handle({data: {}}, {}, 200);
 			
 			expect(converter.convert).toHaveBeenCalled();
@@ -49,6 +50,8 @@ describe('Unit: ResponseHandler class', () => {
 		
 		it('should run response converter when response is collection', () => {
 			
+			spyOn(converter, 'convert');
+			
 			handler.handle({data: [{id: 1}]}, {}, 200);
 			
 			expect(converter.convert).toHaveBeenCalled();
@@ -56,6 +59,8 @@ describe('Unit: ResponseHandler class', () => {
 		});
 		
 		it('should run error response converter when response status is error', () => {
+			
+			spyOn(errorConverter, 'convert');
 			
 			handler.handle({data: [{id: 1}]}, {}, 404);
 			

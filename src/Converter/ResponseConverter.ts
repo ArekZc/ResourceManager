@@ -1,30 +1,26 @@
-/// <reference path="IConverter.ts" />
+import {IConverter} from "./IConverter";
 
-module arekzc.resource.converter {
+export class ResponseConverter implements IConverter {
 	
-	export class ResponseConverter implements IConverter {
+	private Entity: FunctionConstructor;
+	
+	constructor(Entity: FunctionConstructor) {
 		
-		private Entity: FunctionConstructor;
+		this.Entity = Entity;
 		
-		constructor(Entity: FunctionConstructor) {
+	}
+	
+	convert(object: Object): Object {
+		
+		let entity = new this.Entity();
+		
+		for (let property in entity) {
 			
-			this.Entity = Entity;
+			entity[property] = entity[property];
 			
 		}
 		
-		convert(object: Object): Object {
-			
-			let entity = new this.Entity();
-			
-			for (let property in entity) {
-				
-				entity[property] = entity[property];
-				
-			}
-			
-			return entity;
-			
-		}
+		return entity;
 		
 	}
 	

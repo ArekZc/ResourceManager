@@ -1,49 +1,44 @@
-/// <reference path="../../node_modules/definitively-typed/angularjs/angular.d.ts" />
-/// <reference path="../Converter/IConverter.ts" />
-/// <reference path="IHandler.ts" />
+import {IConverter} from "../Converter/IConverter";
+import {IHandler} from "./IHandler";
 
-module arekzc.resource.handler {
+export class ResponseHandler implements IHandler {
+		
+	private converter: IConverter;
 	
-	export class ResponseHandler implements IHandler {
+	private errorConverter: IConverter;
+	
+	constructor(converter: IConverter, errorConverter: IConverter) {
 		
-		private converter: arekzc.resource.converter.IConverter;
+		this.converter = converter;
+		this.errorConverter = errorConverter;
 		
-		private errorConverter: arekzc.resource.converter.IConverter;
+	}
+	
+	handle(response: any, header: Object, status: number): any {
 		
-		constructor(converter: arekzc.resource.converter.IConverter, errorConverter: arekzc.resource.converter.IConverter) {
-			
-			this.converter = converter;
-			this.errorConverter = errorConverter;
-			
-		}
+		let isErrorResponse = status > 400;
 		
-		handle(response: any, header: Object, status: number): any {
+		if (!isErrorResponse) {
 			
-			let isErrorResponse = status > 400;
-			
-			if (!isErrorResponse) {
+			if (Array.isArray(response.data)) {
 				
-				if (Array.isArray(response.data)) {
+				for (let i = 0; i < response.data.length; i++) {
 					
-					for (let i = 0; i < response.data.length; i++) {
-						
-						response.data[i] = this.converter.convert(response.data[i]);
-						
-					}
-					
-					return response;
-					
-				} else {
-					
-					return this.converter.convert(response.data);
+					response.data[i] = this.converter.convert(response.data[i]);
 					
 				}
 				
+				return response;
+				
 			} else {
 				
-				return this.errorConverter.convert(response.data);
+				return this.converter.convert(response.data);
 				
 			}
+			
+		} else {
+			
+			return this.errorConverter.convert(response.data);
 			
 		}
 		
